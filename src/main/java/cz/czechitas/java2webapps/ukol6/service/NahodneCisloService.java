@@ -1,0 +1,22 @@
+package cz.czechitas.java2webapps.ukol6.service;
+
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+import java.util.Random;
+
+@Service
+public class NahodneCisloService {
+    private final Random random;
+
+    @Autowired
+    public NahodneCisloService() {
+        this.random = new Random();
+    }
+
+    public int dejNahodneCislo(int horniMez){
+        return random.nextInt(horniMez);
+    }
+}
